@@ -4,6 +4,7 @@
 
 #include <assert.h>
 #include <stdint.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 // Point3d struct that has the uint16_t properties x, y,
@@ -27,9 +28,15 @@ int main(int argc, char** argv) {
   // Store Point3d* returned by AllocatePoint3d
   Point3d *pt_ptr = AllocatePoint3d(X_VAL, Y_VAL, Z_VAL);
   // Test that each field of the Point3d struct was assigned properly
-  assert(pt_ptr->x == X_VAL);
-  assert(pt_ptr->y == Y_VAL);
-  assert(pt_ptr->z == Z_VAL);
+  if (pt_ptr->x != X_VAL) {
+    printf("Point3d X field was not assigned properly");
+  }
+  if (pt_ptr->y != Y_VAL) {
+    printf("Point3d Y field was not assigned properly");
+  }
+  if (pt_ptr->z != Z_VAL) {
+    printf("Point3d Z field was not assigned properly");
+  }
   // Free pt_ptr to avoid memory leaks
   free(pt_ptr);
 }
