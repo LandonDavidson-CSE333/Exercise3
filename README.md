@@ -1,1 +1,2 @@
 # Exercise3
+Program that implements a helper function to create a custom struct and assign the functions args to the structs fields and return a pointer to the struct in a malloced block. Main then asserts each of the fields of the returned struct to test the function
